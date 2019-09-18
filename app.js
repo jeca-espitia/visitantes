@@ -18,7 +18,7 @@ var app = express();
 app.get('/', (req, res) => {
 	  if (!req.query.name){
         visitantes.create({ name: "anomimo"}, function(err) {   
-            res.send("<h1>Hola desconocido!</h1>");    
+          res.send("<h1>El visitante fue almacenado con éxito</h1>");
             });
         
 	  }else{
