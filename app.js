@@ -6,9 +6,7 @@ mongoose.connection.on("error", function(e) { console.error(e); });
 // definimos el schema
 var schema = mongoose.Schema({
     name: String,
-    date: { type: Date, default: Date.now() },
-   //ObjectId: ,
-    published: { type: Boolean, default: false }
+    date: { type: Date, default: Date.now() }
   });
   
   // definimos el modelo
@@ -17,7 +15,7 @@ var app = express();
 
 app.get('/', (req, res) => {
 	  if (!req.query.name){
-        visitantes.create({ name: "anomimo"}, function(err) {   
+        visitantes.create({ name: "Anómimo"}, function(err) {   
           res.send("<h1>El visitante fue almacenado con éxito</h1>");
             });
         
