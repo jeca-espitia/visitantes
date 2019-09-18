@@ -1,6 +1,6 @@
 var express = require('express');
 var mongoose = require("mongoose");
-mongoose.connect('mongodb://localhost:27017/test', { useNewUrlParser: true });
+mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost:27017/mongo-1', { useNewUrlParser: true });
 mongoose.connection.on("error", function(e) { console.error(e); });
 
 // definimos el schema
